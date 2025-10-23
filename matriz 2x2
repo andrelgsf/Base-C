@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int mat[2][2]; // declaração da matriz 2x2
+    int i, j;      // variáveis de controle do laço
+    int valor_i = 1; 
+    int valor_j = 2;
+
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            if(i == 0)
+                mat[i][j] = valor_i;
+            else
+                mat[i][j] = valor_j;
+        }
+    }
+
+    printf("Exibindo a matriz 2x2:\n");
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
