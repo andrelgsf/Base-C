@@ -1,30 +1,39 @@
-//cria um estrutura "produto" e calcula o valor total em estoque(preço x quantidade) de 3 produtos
-
 #include <stdio.h>
 
 typedef struct {
-    char nome[50];
-    int quantidade;
+    char modelo[50];
+    int ano;
     float preco;
-} Produto;
+} Carro;
 
 int main() {
-    float estoque;
-    Produto produto;
+    Carro c1, c2;
 
- printf("Digite o nome do produto \n");
- scanf("%s", produto.nome);
+    printf("Digite o modelo do primeiro carro: ");
+    scanf("%s", c1.modelo);
 
+    printf("Digite o ano do %s: ", c1.modelo);
+    scanf("%d", &c1.ano);
 
- printf("Digite a quantidade do produto \n");
- scanf("%d", &produto.quantidade);
+    printf("Digite o preço: ");
+    scanf("%f", &c1.preco);
 
- printf("Digite o preço do produto\n ");
- scanf("%f", &produto.preco);
+    printf("\nDigite o modelo do segundo carro: ");
+    scanf("%s", c2.modelo);
 
- estoque = produto.preco * produto.quantidade;
+    printf("Digite o ano do %s: ", c2.modelo);
+    scanf("%d", &c2.ano);
 
- printf("O estoque do produto %s é de %.0f\n ", produto.nome, estoque);
+    printf("Digite o preço: ");
+    scanf("%f", &c2.preco);
+
+    if (c1.preco > c2.preco) {
+        printf("\nO carro mais caro é o %s do ano %d (R$ %.2f)\n", c1.modelo, c1.ano, c1.preco);
+    } else if (c2.preco > c1.preco) {
+        printf("\nO carro mais caro é o %s do ano %d (R$ %.2f)\n", c2.modelo, c2.ano, c2.preco);
+    } else {
+        printf("\nOs dois carros têm o mesmo preço (R$ %.2f)\n", c1.preco);
+    }
 
     return 0;
 }
