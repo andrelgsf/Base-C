@@ -1,5 +1,5 @@
 //cria um estrutura "produto" e calcula o valor total em estoque(preço x quantidade) de 3 produtos
-
+//teste
 #include <stdio.h>
 
 typedef struct {
