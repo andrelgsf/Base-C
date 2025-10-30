@@ -1,40 +1,30 @@
+//cria um estrutura "produto" e calcula o valor total em estoque(preço x quantidade) de 3 produtos
+
 #include <stdio.h>
 
 typedef struct {
     char nome[50];
-    int matricula;
-    float nota;
-} Aluno;
+    int quantidade;
+    float preco;
+} Produto;
 
 int main() {
-    Aluno alunos[3];
-    Aluno melhorAluno;
-    int i;
-    float somaNotas = 0;
+    float estoque;
+    Produto produto;
 
-    for (i = 0; i < 3; i++) {
-        printf("Digite o nome do aluno %d\n", i + 1);
-        scanf("%s", alunos[i].nome);
-
-        printf("Digite a matricula do aluno %d\n", i + 1);
-        scanf("%d", &alunos[i].matricula);
-
-        printf("Digite a nota do aluno %d\n", i + 1);
-        scanf("%f", &alunos[i].nota);
-
-        somaNotas += alunos[i].nota;
-
-        if (i == 0 || alunos[i].nota > melhorAluno.nota) {
-            melhorAluno = alunos[i];
-        }
-
-        printf("\n");
-    }
-
-    float media = somaNotas / 3;
-
-    printf("\nMédia das notas: %.2f\n", media);
-    printf("\nAluno com maior nota: %s : %.2f\n", melhorAluno.nome, melhorAluno.nota);
-
+ printf("Digite o nome do produto \n");
+ scanf("%s", produto.nome);
+ 
+ 
+ printf("Digite a quantidade do produto \n");
+ scanf("%d", &produto.quantidade);
+ 
+ printf("Digite o preço do produto\n ");
+ scanf("%f", &produto.preco);
+ 
+ estoque = produto.preco * produto.quantidade;
+ 
+ printf("O estoque do produto %s é de %.0f\n ", produto.nome, estoque);
+  
     return 0;
 }
